@@ -3,6 +3,8 @@ import NavButtons from "./NavButtons";
 import { BsGithub } from "react-icons/bs";
 import Footer from "./Footer";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
+import DrawerButtons from "./DrawerButtons";
+import Buttons from "./Buttons";
 function useScrollDirection() {
   const [scrollDirection, setScrollDirection] = React.useState("");
 
@@ -59,7 +61,7 @@ function LandingPage() {
             <button className="bg-primary-light duration-200 text-primary rounded-md px-4 py-2 hover:scale-105 transition-[transform]">
               SignUp
             </button>
-            <div className="w-[3px] rounded h-full dark:bg-slate-200"></div>
+            <div className="w-[2px] rounded h-10 dark:bg-slate-200"></div>
             <a href="https://github.com/C-NikhilKarthik/ProjX">
               <BsGithub className="dark:text-slate-200 text-xl" />
             </a>
@@ -88,7 +90,7 @@ function LandingPage() {
       <div
         className={`absolute ${
           show ? "translate-x-0" : "translate-x-[100%]"
-        } transition-transform duration-300 ease-in-out h-full w-full bg-slate-950/30 backdrop-blur z-50 flex flex-col`}
+        } transition-transform duration-300 ease-in-out h-screen w-full bg-slate-950/30 backdrop-blur z-50 flex flex-col`}
       >
         <div className="flex p-4 items-center bg-slate-950 justify-between">
           <img
@@ -103,8 +105,23 @@ function LandingPage() {
             }}
           />
         </div>
-
-        
+        <div className="px-5 mb-8">
+          <div className="h-[2px] w-full bg-slate-300"></div>
+        </div>
+        <div className="flex flex-col h-full justify-between">
+          <div>
+            <DrawerButtons Name={"Home"} />
+            <DrawerButtons Name={"About"} />
+            <DrawerButtons Name={"Contact"} />
+          </div>
+          <div className="pb-6 bg-slate-950">
+            <div className="px-5 mb-8">
+              <div className="h-[2px] w-full bg-slate-300"></div>
+            </div>
+            <Buttons Name={"Login"} />
+            <Buttons Name={"SignUp"} />
+          </div>
+        </div>
       </div>
     </div>
   );
