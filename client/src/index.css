@@ -11,6 +11,7 @@ body{
   font-family: 'Noto Sans', sans-serif;
 }
 
+
 @layer utilities {
   ::-webkit-scrollbar {
     width: 20px;
@@ -38,4 +39,10 @@ body{
   background-color: #64ffdb24;
   color: #64ffda;
   user-select: all;
+}
+
+@layer base{
+  html{
+    -webkit-tap-highlight-color: transparent;
+  }
 }
